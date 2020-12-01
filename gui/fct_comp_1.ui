@@ -52,13 +52,23 @@
      </item>
     </layout>
    </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_fct_comp_1">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
    <item row="2" column="0">
     <widget class="QTableWidget" name="table_fct_comp_1">
-     <attribute name="horizontalHeaderMinimumSectionSize">
-      <number>50</number>
-     </attribute>
      <attribute name="horizontalHeaderDefaultSectionSize">
       <number>110</number>
+     </attribute>
+     <attribute name="horizontalHeaderMinimumSectionSize">
+      <number>50</number>
      </attribute>
      <attribute name="horizontalHeaderStretchLastSection">
       <bool>true</bool>
@@ -86,16 +96,11 @@
        <string>categorieSp</string>
       </property>
      </column>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="label_fct_comp_1">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
+     <column>
+      <property name="text">
+       <string>dateNaisSp</string>
+      </property>
+     </column>
     </widget>
    </item>
   </layout>
