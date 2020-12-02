@@ -7,7 +7,6 @@ from PyQt5 import uic
 
 
 def item(self):
-    print('item')
 
     self.ui.comboBox_cat.addItem("masculin")
     self.ui.comboBox_cat.addItem("feminin")
