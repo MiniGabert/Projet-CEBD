@@ -56,7 +56,7 @@ class AppWindow(QMainWindow):
 
         except Exception as e:
             # En cas d'erreur, on affiche un message
-            display.refreshLabel(self.ui.label_2, "L'erreur suivante s'est produite pendant lors de la création de la base : "+repr(e)+".")
+            display.refreshLabel(self.ui.label_2, "L'erreur "+repr(e)+".")
 
         else:
             # Si tout s'est bien passé, on affiche le message de succès et on commit
