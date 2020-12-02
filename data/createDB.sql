@@ -66,6 +66,7 @@ CREATE TABLE LesResultats
   CONSTRAINT RES_FK3 FOREIGN KEY (bronze, numEp) REFERENCES LesInscriptions(numIn,numEp),
   CONSTRAINT RES_CK1 CHECK (gold<>silver AND silver<>bronze AND gold<>bronze)
 );
+
 -- TODO 1.2a DONE : ajouter la définition de la vue LesSportifs
 
 CREATE VIEW view_LesSportifs AS
@@ -76,3 +77,9 @@ CREATE VIEW view_LesSportifs AS
 
 
 -- TODO 1.4a : ajouter la définition de la vue LesEquipes
+
+CREATE VIEW LesEquipes AS
+    SELECT numEq, count(numSp) as nbEquipiersEq
+    FROM LesEquipiers
+    GROUP BY numEq;
+
