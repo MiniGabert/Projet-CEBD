@@ -22,10 +22,8 @@ class AppFctComp4(QDialog):
         display.refreshLabel(self.ui.label_fct_comp_4, "")
         try:
             cursor = self.data.cursor()
-            result = cursor.execute(
-                "SELECT numSp, nomSp, prenomSp, categorieSp, dateNaisSp FROM LesSportifs_base JOIN LesEquipiers USING (numSp) WHERE pays = ? AND numEq=?",
-                [self.ui.comboBox_fct_4_pays.currentText(),self.ui.spinBox_fct_4_equipe.text().strip()]
-            )
+            result = cursor.execute("SELECT numSp, nomSp, prenomSp, categorieSp, dateNaisSp FROM LesSportifs_base JOIN LesEquipiers USING (numSp) WHERE pays = ? AND numEq=?",
+                [self.ui.comboBox_fct_4_pays.currentText(),self.ui.spinBox_fct_4_equipe.text().strip()])
         except Exception as e:
             self.ui.table_fct_comp_4.setRowCount(0)
             display.refreshLabel(self.ui.label_fct_comp_4, "Impossible d'afficher les résultats : " + repr(e))
@@ -45,3 +43,17 @@ class AppFctComp4(QDialog):
             self.ui.comboBox_fct_4_pays.clear()
         else:
             display.refreshGenericCombo(self.ui.comboBox_fct_4_pays, result)
+
+    def refreshEquipeList(self):
+
+        display.refreshLabel(self.ui.label_fct_comp_4, "")
+        try:
+            cursor = self.data.cursor()
+            result = cursor.execute(
+                "SELECT DISTINCT numEq FROM LesSportifs_base JOIN LesEquipiers USING (numSp) WHERE pays = ?",
+                [self.ui.comboBox_fct_4_pays.currentText()]
+            )
+        except Exception as e:
+            self.ui.comboBox_fct_4_equipes.clear()
+        else:
+            display.refreshGenericCombo(self.ui.comboBox_fct_4_equipes, result)
