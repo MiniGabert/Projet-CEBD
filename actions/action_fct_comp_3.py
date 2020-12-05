@@ -31,7 +31,7 @@ class AppFctComp3(QDialog):
     # Fonction de mise à jour de l'affichage
     @pyqtSlot()
     def refreshResult(self):
-        # TODO 1.6 : fonction à modifier pour remplacer la zone de saisie par une liste de valeurs issues de la BD une
+        # TODO 1.6 DONE : fonction à modifier pour remplacer la zone de saisie par une liste de valeurs issues de la BD une
         #  fois le fichier ui correspondant mis à jour
 
         display.refreshLabel(self.ui.label_fct_comp_3, "")
