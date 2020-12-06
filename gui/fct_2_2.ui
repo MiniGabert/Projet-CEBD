@@ -33,22 +33,22 @@
      </attribute>
      <column>
       <property name="text">
-       <string>nomSp</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>prenomSp</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
        <string>pays</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>categorieSp</string>
+       <string>nbOr</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>nbArgent</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>nbBronze</string>
       </property>
      </column>
     </widget>

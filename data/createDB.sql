@@ -83,3 +83,8 @@ CREATE VIEW LesEquipes AS
     FROM LesEquipiers
     GROUP BY numEq;
 
+CREATE VIEW pays AS
+    SELECT pays
+    FROM LesSportifs_base
+    GROUP BY pays;
+
