@@ -38,7 +38,7 @@ class AppFctComp4(QDialog):
 
         try:
             cursor = self.data.cursor()
-            result = cursor.execute("SELECT DISTINCT pays FROM LesSportifs_base ORDER BY pays")
+            result = cursor.execute("SELECT DISTINCT pays FROM LesSportifs_base JOIN LesEquipiers WHERE LesSportifs_base.numSp = LesEquipiers.numSp ORDER BY pays")
         except Exception as e:
             self.ui.comboBox_fct_4_pays.clear()
         else:
