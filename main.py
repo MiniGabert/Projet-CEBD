@@ -14,6 +14,9 @@ from actions.action_fct_comp_3 import AppFctComp3
 from actions.action_fct_comp_4 import AppFctComp4
 from actions.action_fct_2_1 import AppFct2_1
 from actions.action_fct_2_2 import AppFct2_2
+from actions.action_fct_3_1 import AppFct3_1
+from actions.action_fct_3_2 import AppFct3_2
+
 
 # Classe utilisée pour lancer la fenêtre principale de l'application et définir ses actions
 class AppWindow(QMainWindow):
@@ -34,6 +37,8 @@ class AppWindow(QMainWindow):
     fct_comp_4_dialog = None
     fct_2_1_dialog = None
     fct_2_2_dialog = None
+    fct_3_1_dialog = None
+    fct_3_2_dialog = None
 
     # Constructeur
     def __init__(self):
@@ -122,6 +127,18 @@ class AppWindow(QMainWindow):
         self.fct_2_2_dialog = AppFct2_2(self.data)
         self.fct_2_2_dialog.show()
 
+    def open_fct_3_1(self):
+        if self.fct_3_1_dialog is not None:
+            self.fct_3_1_dialog.close()
+        self.fct_3_1_dialog = AppFct3_1(self.data)
+        self.fct_3_1_dialog.show()
+
+    def open_fct_3_2(self):
+        if self.fct_3_2_dialog is not None:
+            self.fct_3_2_dialog.close()
+        self.fct_3_2_dialog = AppFct3_2(self.data)
+        self.fct_3_2_dialog.show()
+
     # En cas de clic sur le bouton de visualisation des données
     def openData(self):
         if self.tablesDataDialog is not None:
@@ -204,6 +221,10 @@ class AppWindow(QMainWindow):
             self.fct_2_1_dialog.close()
         if (self.fct_2_2_dialog is not None):
             self.fct_2_2_dialog.close()
+        if (self.fct_3_1_dialog is not None):
+            self.fct_3_1_dialog.close()
+        if (self.fct_3_2_dialog is not None):
+            self.fct_3_2_dialog.close()
 
         # On ferme proprement la base de données
         self.data.close()
